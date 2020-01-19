@@ -64,6 +64,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         placesClient = Places.createClient(this)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        disposable?.dispose()
+    }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
